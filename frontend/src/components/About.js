@@ -35,7 +35,7 @@ const About = () => {
         .section-title {
           font-size: clamp(2.5rem, 5vw, 3.5rem);
           font-weight: 700;
-          color: #ffffff;
+          color: var(--theme-textPrimary);
           margin-bottom: 2rem;
           position: relative;
           display: inline-block;
@@ -49,14 +49,14 @@ const About = () => {
           transform: translateX(-50%);
           width: 60px;
           height: 3px;
-          background: linear-gradient(90deg, #404040, #606060, #404040);
+          background: linear-gradient(90deg, var(--theme-border), var(--theme-accent), var(--theme-border));
           border-radius: 2px;
         }
         
         .divider {
           width: 100px;
           height: 1px;
-          background: linear-gradient(90deg, transparent, #606060, transparent);
+          background: linear-gradient(90deg, transparent, var(--theme-accent), transparent);
           margin: 2rem auto 3rem;
           position: relative;
         }
@@ -69,21 +69,21 @@ const About = () => {
           transform: translateX(-50%);
           width: 6px;
           height: 6px;
-          background: #606060;
+          background: var(--theme-accent);
           border-radius: 50%;
-          box-shadow: 0 0 10px rgba(96, 96, 96, 0.5);
+          box-shadow: 0 0 10px var(--theme-accent);
         }
         
         .about-text {
           font-size: clamp(1.1rem, 2.5vw, 1.4rem);
           line-height: 1.8;
-          color: #b0b0b0;
+          color: var(--theme-textSecondary);
           font-weight: 300;
           letter-spacing: 0.3px;
         }
         
         .highlight-text {
-          color: #e0e0e0;
+          color: var(--theme-textPrimary);
           font-weight: 400;
           position: relative;
         }
@@ -95,7 +95,7 @@ const About = () => {
           left: 0;
           width: 100%;
           height: 2px;
-          background: linear-gradient(90deg, #404040, #606060);
+          background: linear-gradient(90deg, var(--theme-border), var(--theme-accent));
           opacity: 0.6;
         }
         
