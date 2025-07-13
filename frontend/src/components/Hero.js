@@ -4,14 +4,6 @@ import { Github, Linkedin, Mail, FileText, Eye, EyeOff } from 'lucide-react';
 const Hero = () => {
   const [showBackground, setShowBackground] = useState(true);
 
-  const aiBackgrounds = [
-    "https://images.unsplash.com/photo-1697577418970-95d99b5a55cf?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzh8MHwxfHNlYXJjaHwxfHxhcnRpZmljaWFsJTIwaW50ZWxsaWdlbmNlfGVufDB8fHx8MTc1MjM5MjAyNXww&ixlib=rb-4.1.0&q=85",
-    "https://images.unsplash.com/photo-1674027444485-cec3da58eef4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzh8MHwxfHNlYXJjaHwyfHxhcnRpZmljaWFsJTIwaW50ZWxsaWdlbmNlfGVufDB8fHx8MTc1MjM5MjAyNXww&ixlib=rb-4.1.0&q=85",
-    "https://images.unsplash.com/photo-1644088379091-d574269d422f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzh8MHwxfHNlYXJjaHwzfHxuZXVyYWwlMjBuZXR3b3Jrc3xlbnwwfHx8fDE3NTIzOTIwMzR8MA&ixlib=rb-4.1.0&q=85"
-  ];
-
-  const [currentBackground] = useState(aiBackgrounds[2]); // Using the neural network visualization
-
   const socialLinks = [
     { icon: Linkedin, href: 'https://linkedin.com/in/nithyanandam-venu', label: 'LinkedIn' },
     { icon: Github, href: 'https://github.com/nithyanandam-venu', label: 'GitHub' },
