@@ -144,10 +144,9 @@ const Projects = () => {
         
         .project-header {
           display: flex;
-          justify-content: space-between;
+          justify-content: flex-start;
           align-items: flex-start;
           margin-bottom: 1rem;
-          gap: 1rem;
         }
         
         .project-title {
