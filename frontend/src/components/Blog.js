@@ -70,7 +70,7 @@ const Blog = () => {
         
         <div className="view-all-container">
           <a 
-            href="https://nithyaai.substack.com" 
+            href="https://nithyanandamv.substack.com" 
             className="view-all-link"
             target="_blank"
             rel="noopener noreferrer"
