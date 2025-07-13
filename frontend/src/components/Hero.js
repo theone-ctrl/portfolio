@@ -86,9 +86,9 @@ const Hero = () => {
         }
         
         .connect-button {
-          background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
-          border: 1px solid #404040;
-          color: #ffffff;
+          background: linear-gradient(135deg, var(--theme-cardBg) 0%, var(--theme-background) 100%);
+          border: 1px solid var(--theme-border);
+          color: var(--theme-textPrimary);
           padding: 1rem 2.5rem;
           font-size: 1.1rem;
           font-weight: 500;
@@ -102,7 +102,7 @@ const Hero = () => {
         
         .connect-button:hover {
           transform: translateY(-2px);
-          border-color: #606060;
+          border-color: var(--theme-accent);
           box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
         
