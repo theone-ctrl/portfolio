@@ -102,14 +102,40 @@ const Hero = () => {
           width: 100%;
           height: 100%;
           z-index: 0;
+          background: radial-gradient(circle at 25% 25%, rgba(var(--theme-accent), 0.1) 0%, transparent 50%),
+                      radial-gradient(circle at 75% 75%, rgba(var(--theme-accent), 0.08) 0%, transparent 50%),
+                      radial-gradient(circle at 50% 50%, rgba(var(--theme-accent), 0.05) 0%, transparent 70%);
         }
 
-        .ai-background img {
+        .ai-background::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
           width: 100%;
           height: 100%;
-          object-fit: cover;
-          opacity: 0.15;
-          filter: blur(1px);
+          background-image: 
+            linear-gradient(45deg, transparent 40%, rgba(var(--theme-accent), 0.05) 50%, transparent 60%),
+            linear-gradient(-45deg, transparent 40%, rgba(var(--theme-accent), 0.03) 50%, transparent 60%);
+          background-size: 60px 60px;
+          animation: networkPulse 8s ease-in-out infinite;
+        }
+
+        .ai-background::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: 
+            radial-gradient(2px 2px at 20% 30%, rgba(var(--theme-accent), 0.3), transparent),
+            radial-gradient(2px 2px at 40% 70%, rgba(var(--theme-accent), 0.2), transparent),
+            radial-gradient(1px 1px at 60% 20%, rgba(var(--theme-accent), 0.4), transparent),
+            radial-gradient(1px 1px at 80% 80%, rgba(var(--theme-accent), 0.2), transparent),
+            radial-gradient(2px 2px at 90% 40%, rgba(var(--theme-accent), 0.3), transparent);
+          background-size: 200px 200px, 300px 300px, 150px 150px, 250px 250px, 180px 180px;
+          animation: floatNodes 12s linear infinite;
         }
 
         .background-overlay {
