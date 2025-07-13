@@ -338,6 +338,15 @@ const Hero = () => {
           }
         }
         
+        @keyframes glow {
+          from {
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+          }
+          to {
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+          }
+        }
+
         @keyframes networkPulse {
           0%, 100% {
             opacity: 0.3;
