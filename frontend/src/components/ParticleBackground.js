@@ -1,9 +1,11 @@
 import React, { useEffect, useRef } from 'react';
+import { useTheme } from '../contexts/ThemeContext';
 
 const ParticleBackground = () => {
   const canvasRef = useRef(null);
   const particlesRef = useRef([]);
   const animationRef = useRef(null);
+  const { theme } = useTheme();
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -35,6 +37,12 @@ const ParticleBackground = () => {
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       
+      // Parse theme particle color
+      const particleColor = theme.particle.replace('rgba(', '').replace(')', '').split(',');
+      const r = parseInt(particleColor[0]);
+      const g = parseInt(particleColor[1]);
+      const b = parseInt(particleColor[2]);
+      
       particlesRef.current.forEach((particle) => {
         particle.x += particle.speedX;
         particle.y += particle.speedY;
@@ -44,13 +52,13 @@ const ParticleBackground = () => {
         
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(99, 99, 99, ${particle.opacity})`;
+        ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${particle.opacity})`;
         ctx.fill();
         
         // Add subtle glow
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.size + 2, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(99, 99, 99, ${particle.opacity * 0.2})`;
+        ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${particle.opacity * 0.2})`;
         ctx.fill();
       });
       
@@ -74,7 +82,7 @@ const ParticleBackground = () => {
         cancelAnimationFrame(animationRef.current);
       }
     };
-  }, []);
+  }, [theme]);
 
   return (
     <canvas
