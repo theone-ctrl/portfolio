@@ -68,7 +68,7 @@ const Hero = () => {
         .hero-name {
           font-size: clamp(3rem, 8vw, 6rem);
           font-weight: 800;
-          background: linear-gradient(135deg, #ffffff 0%, #a0a0a0 100%);
+          background: linear-gradient(135deg, var(--theme-textPrimary) 0%, var(--theme-textSecondary) 100%);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
@@ -80,7 +80,7 @@ const Hero = () => {
         .hero-subtitle {
           font-size: clamp(1.2rem, 3vw, 1.8rem);
           font-weight: 300;
-          color: #b0b0b0;
+          color: var(--theme-textSecondary);
           margin-bottom: 3rem;
           letter-spacing: 0.5px;
         }
