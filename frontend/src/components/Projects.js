@@ -4,43 +4,33 @@ import { ExternalLink, Github, Play } from 'lucide-react';
 const Projects = () => {
   const projects = [
     {
-      title: "Pitch Deck Generator",
-      description: "AI-powered tool that creates professional pitch decks from business ideas",
-      tech: ["OpenAI", "React", "FastAPI"],
-      status: "Live",
-      statusColor: "#22c55e",
-      link: "#"
+      title: "Domain-Based RAG Chatbot",
+      description: "A custom chatbot built using Retrieval-Augmented Generation (RAG) tailored to answer questions from domain-specific content (Excel blog or knowledge base).",
+      details: "Input: User query | Output: Accurate answers based on uploaded domain docs",
+      tech: ["OpenAI", "LangChain", "FAISS", "Streamlit"],
+      useCase: "Internal helpdesk, blog assistant, domain Q&A bot"
     },
     {
       title: "PDF Contract Analyzer",
       description: "An LLM + RAG-powered tool that parses legal documents and explains clauses in plain English.",
       details: "Input: Any PDF contract | Output: Clause-by-clause plain English summary",
       tech: ["LangChain", "OpenAI", "Pinecone", "Streamlit"],
-      status: "Working Prototype",
-      statusColor: "#f59e0b",
-      useCase: "Legal contract transparency for non-lawyers",
-      link: "#"
+      useCase: "Legal contract transparency for non-lawyers"
     },
     {
       title: "Story-to-Video AI Workflow",
       description: "Converts a short story script into a complete video — narration, voiceover, and lip-synced avatar.",
       details: "Input: Script (text) | Output: Lip-synced AI video",
       tech: ["Bark TTS", "SadTalker", "ffmpeg", "ElevenLabs"],
-      status: "Deployed",
-      statusColor: "#22c55e",
       useCase: "YouTube Shorts, Instagram Reels, Storytelling Automation",
-      note: "Tamil + English versions in progress",
-      link: "#"
+      note: "Tamil + English versions in progress"
     },
     {
       title: "AgriQA LoRA Fine-Tune",
       description: "Fine-tuned TinyLlama-1.1B using LoRA on the AgriQA dataset to answer domain-specific agricultural queries.",
       details: "Input: Instructional prompt (Agri-related) | Output: Domain-aware response",
       tech: ["Hugging Face", "PEFT", "Transformers", "BitsandBytes"],
-      status: "Published on Hugging Face",
-      statusColor: "#22c55e",
-      useCase: "Rural advisory bots, farming Q&A, chatbot base models",
-      link: "#"
+      useCase: "Rural advisory bots, farming Q&A, chatbot base models"
     }
   ];
 
