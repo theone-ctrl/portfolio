@@ -31,7 +31,6 @@ const Hero = () => {
     <section className="hero-section">
       {showBackground && (
         <div className="ai-background">
-          <img src={currentBackground} alt="AI Neural Network" />
           <div className="background-overlay"></div>
         </div>
       )}
