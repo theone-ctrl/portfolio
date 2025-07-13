@@ -20,7 +20,7 @@ const Blog = () => {
       title: "The Future of AI-Powered Video Generation",
       date: "2024-02-28",
       excerpt: "From text-to-video models to lip-sync technology - exploring the cutting edge of AI video creation.",
-      url: "https://nithyaai.substack.com/p/ai-video-generation"
+      url: "https://nithyanandamv.substack.com/p/ai-video-generation"
     }
   ];
 
