@@ -338,12 +338,29 @@ const Hero = () => {
           }
         }
         
-        @keyframes glow {
-          from {
-            text-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+        @keyframes networkPulse {
+          0%, 100% {
+            opacity: 0.3;
+            transform: scale(1);
           }
-          to {
-            text-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+          50% {
+            opacity: 0.6;
+            transform: scale(1.05);
+          }
+        }
+
+        @keyframes floatNodes {
+          0% {
+            transform: translateY(0px) rotate(0deg);
+          }
+          33% {
+            transform: translateY(-10px) rotate(120deg);
+          }
+          66% {
+            transform: translateY(5px) rotate(240deg);
+          }
+          100% {
+            transform: translateY(0px) rotate(360deg);
           }
         }
         
