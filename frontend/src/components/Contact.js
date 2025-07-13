@@ -61,8 +61,8 @@ const Contact = () => {
         .contact-content {
           text-align: center;
           padding: 4rem 2rem;
-          background: rgba(26, 26, 26, 0.5);
-          border: 1px solid #404040;
+          background: var(--theme-cardBg);
+          border: 1px solid var(--theme-border);
           border-radius: 24px;
           backdrop-filter: blur(20px);
           position: relative;
@@ -76,15 +76,15 @@ const Contact = () => {
           left: 0;
           right: 0;
           height: 1px;
-          background: linear-gradient(90deg, transparent, #606060, transparent);
+          background: linear-gradient(90deg, transparent, var(--theme-accent), transparent);
         }
         
         .section-title {
           font-size: clamp(2.5rem, 5vw, 3.5rem);
           font-weight: 700;
-          color: #ffffff;
+          color: var(--theme-textPrimary);
           margin-bottom: 1.5rem;
-          background: linear-gradient(135deg, #ffffff 0%, #b0b0b0 100%);
+          background: linear-gradient(135deg, var(--theme-textPrimary) 0%, var(--theme-textSecondary) 100%);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
@@ -93,13 +93,13 @@ const Contact = () => {
         .contact-description {
           font-size: clamp(1.1rem, 2.5vw, 1.3rem);
           line-height: 1.6;
-          color: #b0b0b0;
+          color: var(--theme-textSecondary);
           margin-bottom: 3rem;
           font-weight: 300;
         }
         
         .highlight {
-          color: #e0e0e0;
+          color: var(--theme-textPrimary);
           font-weight: 400;
         }
         
@@ -107,9 +107,9 @@ const Contact = () => {
           display: inline-flex;
           align-items: center;
           gap: 0.8rem;
-          background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
-          border: 2px solid #404040;
-          color: #ffffff;
+          background: linear-gradient(135deg, var(--theme-cardBg) 0%, var(--theme-background) 100%);
+          border: 2px solid var(--theme-border);
+          color: var(--theme-textPrimary);
           padding: 1.2rem 3rem;
           font-size: 1.1rem;
           font-weight: 600;
@@ -123,7 +123,7 @@ const Contact = () => {
         
         .contact-button:hover {
           transform: translateY(-3px) scale(1.02);
-          border-color: #606060;
+          border-color: var(--theme-accent);
           box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
         }
         
@@ -147,7 +147,7 @@ const Contact = () => {
         }
         
         .contact-info {
-          color: #909090;
+          color: var(--theme-textMuted);
           font-size: 1rem;
         }
         
@@ -164,7 +164,7 @@ const Contact = () => {
         .floating-circle {
           position: absolute;
           border-radius: 50%;
-          background: radial-gradient(circle, rgba(96, 96, 96, 0.1), transparent);
+          background: radial-gradient(circle, rgba(var(--theme-accent), 0.1), transparent);
           animation: float 6s ease-in-out infinite;
         }
         
@@ -193,7 +193,7 @@ const Contact = () => {
         }
         
         .footer {
-          border-top: 1px solid #404040;
+          border-top: 1px solid var(--theme-border);
           padding: 2rem 0;
           margin-top: 4rem;
         }
@@ -202,7 +202,7 @@ const Contact = () => {
           max-width: 1200px;
           margin: 0 auto;
           text-align: center;
-          color: #707070;
+          color: var(--theme-textMuted);
           font-size: 0.9rem;
           padding: 0 2rem;
         }

@@ -77,7 +77,7 @@ const Skills = () => {
         .section-title {
           font-size: clamp(2.5rem, 5vw, 3.5rem);
           font-weight: 700;
-          color: #ffffff;
+          color: var(--theme-textPrimary);
           text-align: center;
           margin-bottom: 4rem;
         }
@@ -94,13 +94,13 @@ const Skills = () => {
         }
         
         .skill-tag {
-          background: rgba(40, 40, 40, 0.6);
-          color: #e0e0e0;
+          background: var(--theme-cardBg);
+          color: var(--theme-textPrimary);
           padding: 0.6rem 1.2rem;
           border-radius: 25px;
           font-size: calc(0.85rem * var(--size));
           font-weight: 500;
-          border: 1px solid #505050;
+          border: 1px solid var(--theme-border);
           cursor: pointer;
           transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
           position: relative;
@@ -110,9 +110,9 @@ const Skills = () => {
         
         .skill-tag:hover {
           transform: translateY(-3px) scale(1.05);
-          background: rgba(60, 60, 60, 0.8);
-          border-color: #707070;
-          color: #ffffff;
+          background: rgba(var(--theme-accent), 0.2);
+          border-color: var(--theme-accent);
+          color: var(--theme-textPrimary);
           box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
         }
         
@@ -144,8 +144,8 @@ const Skills = () => {
         }
         
         .skill-category {
-          background: rgba(26, 26, 26, 0.5);
-          border: 1px solid #404040;
+          background: var(--theme-cardBg);
+          border: 1px solid var(--theme-border);
           border-radius: 16px;
           padding: 2rem;
           text-align: center;
@@ -155,14 +155,14 @@ const Skills = () => {
         
         .skill-category:hover {
           transform: translateY(-5px);
-          border-color: #606060;
-          background: rgba(30, 30, 30, 0.7);
+          border-color: var(--theme-accent);
+          background: rgba(var(--theme-accent), 0.05);
         }
         
         .category-title {
           font-size: 1.3rem;
           font-weight: 600;
-          color: #ffffff;
+          color: var(--theme-textPrimary);
           margin-bottom: 1.5rem;
           position: relative;
         }
@@ -175,7 +175,7 @@ const Skills = () => {
           transform: translateX(-50%);
           width: 40px;
           height: 2px;
-          background: linear-gradient(90deg, #404040, #606060, #404040);
+          background: linear-gradient(90deg, var(--theme-border), var(--theme-accent), var(--theme-border));
           border-radius: 1px;
         }
         
@@ -187,20 +187,20 @@ const Skills = () => {
         }
         
         .category-skill {
-          background: rgba(50, 50, 50, 0.5);
-          color: #c0c0c0;
+          background: rgba(var(--theme-accent), 0.1);
+          color: var(--theme-textPrimary);
           padding: 0.4rem 0.9rem;
           border-radius: 12px;
           font-size: 0.85rem;
           font-weight: 400;
-          border: 1px solid rgba(80, 80, 80, 0.5);
+          border: 1px solid var(--theme-border);
           transition: all 0.3s ease;
         }
         
         .category-skill:hover {
-          background: rgba(70, 70, 70, 0.7);
-          color: #ffffff;
-          border-color: #808080;
+          background: rgba(var(--theme-accent), 0.2);
+          color: var(--theme-textPrimary);
+          border-color: var(--theme-accent);
         }
         
         @keyframes popIn {
