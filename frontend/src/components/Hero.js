@@ -133,10 +133,10 @@ const Hero = () => {
           justify-content: center;
           width: 50px;
           height: 50px;
-          background: rgba(40, 40, 40, 0.5);
-          border: 1px solid #404040;
+          background: var(--theme-cardBg);
+          border: 1px solid var(--theme-border);
           border-radius: 50%;
-          color: #b0b0b0;
+          color: var(--theme-textSecondary);
           text-decoration: none;
           position: relative;
           overflow: hidden;
@@ -146,8 +146,8 @@ const Hero = () => {
         
         .social-link:hover {
           transform: translateY(-3px);
-          border-color: #606060;
-          color: #ffffff;
+          border-color: var(--theme-accent);
+          color: var(--theme-textPrimary);
           box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
         
