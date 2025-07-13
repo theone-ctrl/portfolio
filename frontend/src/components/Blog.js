@@ -95,28 +95,28 @@ const Blog = () => {
         .section-title {
           font-size: clamp(2.5rem, 5vw, 3.5rem);
           font-weight: 700;
-          color: #ffffff;
+          color: var(--theme-textPrimary);
           text-align: center;
           margin-bottom: 1rem;
         }
         
         .section-subtitle {
           text-align: center;
-          color: #b0b0b0;
+          color: var(--theme-textSecondary);
           font-size: 1.1rem;
           margin-bottom: 4rem;
         }
         
         .substack-link {
-          color: #e0e0e0;
+          color: var(--theme-textPrimary);
           text-decoration: none;
-          border-bottom: 1px solid #606060;
+          border-bottom: 1px solid var(--theme-accent);
           transition: all 0.3s ease;
         }
         
         .substack-link:hover {
-          color: #ffffff;
-          border-bottom-color: #ffffff;
+          color: var(--theme-accent);
+          border-bottom-color: var(--theme-accent);
         }
         
         .blog-grid {
@@ -127,8 +127,8 @@ const Blog = () => {
         }
         
         .blog-card {
-          background: rgba(26, 26, 26, 0.6);
-          border: 1px solid #404040;
+          background: var(--theme-cardBg);
+          border: 1px solid var(--theme-border);
           border-radius: 16px;
           padding: 2rem;
           position: relative;
@@ -140,7 +140,7 @@ const Blog = () => {
         
         .blog-card:hover {
           transform: translateY(-5px);
-          border-color: #606060;
+          border-color: var(--theme-accent);
           box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
         }
         
@@ -153,7 +153,7 @@ const Blog = () => {
           display: flex;
           align-items: center;
           gap: 0.5rem;
-          color: #909090;
+          color: var(--theme-textMuted);
           font-size: 0.9rem;
           margin-bottom: 1rem;
           font-weight: 400;
@@ -162,18 +162,18 @@ const Blog = () => {
         .blog-title {
           font-size: 1.3rem;
           font-weight: 600;
-          color: #ffffff;
+          color: var(--theme-textPrimary);
           line-height: 1.4;
           margin-bottom: 1rem;
           transition: color 0.3s ease;
         }
         
         .blog-card:hover .blog-title {
-          color: #f0f0f0;
+          color: var(--theme-accent);
         }
         
         .blog-excerpt {
-          color: #b0b0b0;
+          color: var(--theme-textSecondary);
           line-height: 1.6;
           margin-bottom: 1.5rem;
           font-size: 0.95rem;
@@ -183,20 +183,20 @@ const Blog = () => {
           display: inline-flex;
           align-items: center;
           gap: 0.5rem;
-          color: #e0e0e0;
+          color: var(--theme-textPrimary);
           text-decoration: none;
           font-weight: 500;
           font-size: 0.9rem;
           padding: 0.5rem 1rem;
-          border: 1px solid #404040;
+          border: 1px solid var(--theme-border);
           border-radius: 8px;
           transition: all 0.3s ease;
         }
         
         .read-more-link:hover {
-          color: #ffffff;
-          border-color: #606060;
-          background: rgba(60, 60, 60, 0.2);
+          color: var(--theme-accent);
+          border-color: var(--theme-accent);
+          background: rgba(var(--theme-accent), 0.1);
           transform: translateX(2px);
         }
         
@@ -228,20 +228,20 @@ const Blog = () => {
           display: inline-flex;
           align-items: center;
           gap: 0.5rem;
-          color: #ffffff;
+          color: var(--theme-textPrimary);
           text-decoration: none;
           font-size: 1.1rem;
           font-weight: 500;
           padding: 1rem 2rem;
-          border: 2px solid #404040;
+          border: 2px solid var(--theme-border);
           border-radius: 50px;
           transition: all 0.3s ease;
-          background: rgba(26, 26, 26, 0.5);
+          background: var(--theme-cardBg);
         }
         
         .view-all-link:hover {
-          border-color: #606060;
-          background: rgba(40, 40, 40, 0.7);
+          border-color: var(--theme-accent);
+          background: rgba(var(--theme-accent), 0.1);
           transform: translateY(-2px);
           box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }

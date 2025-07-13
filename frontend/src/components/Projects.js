@@ -92,7 +92,7 @@ const Projects = () => {
         .section-title {
           font-size: clamp(2.5rem, 5vw, 3.5rem);
           font-weight: 700;
-          color: #ffffff;
+          color: var(--theme-textPrimary);
           text-align: center;
           margin-bottom: 4rem;
           position: relative;
@@ -108,7 +108,7 @@ const Projects = () => {
           transform: translateX(-50%);
           width: 60px;
           height: 3px;
-          background: linear-gradient(90deg, #404040, #606060, #404040);
+          background: linear-gradient(90deg, var(--theme-border), var(--theme-accent), var(--theme-border));
           border-radius: 2px;
         }
         
@@ -120,8 +120,8 @@ const Projects = () => {
         }
         
         .project-card {
-          background: rgba(26, 26, 26, 0.8);
-          border: 1px solid #404040;
+          background: var(--theme-cardBg);
+          border: 1px solid var(--theme-border);
           border-radius: 20px;
           padding: 2rem;
           position: relative;
@@ -133,7 +133,7 @@ const Projects = () => {
         
         .project-card:hover {
           transform: translateY(-8px);
-          border-color: #606060;
+          border-color: var(--theme-accent);
           box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         }
         
@@ -152,36 +152,27 @@ const Projects = () => {
         .project-title {
           font-size: 1.4rem;
           font-weight: 600;
-          color: #ffffff;
+          color: var(--theme-textPrimary);
           line-height: 1.3;
         }
         
-        .status-badge {
-          padding: 0.3rem 0.8rem;
-          border-radius: 12px;
-          font-size: 0.75rem;
-          font-weight: 500;
-          color: #ffffff;
-          white-space: nowrap;
-        }
-        
         .project-description {
-          color: #b0b0b0;
+          color: var(--theme-textSecondary);
           line-height: 1.6;
           margin-bottom: 1rem;
           font-size: 0.95rem;
         }
         
         .project-details {
-          background: rgba(40, 40, 40, 0.5);
+          background: rgba(var(--theme-accent), 0.1);
           padding: 0.8rem;
           border-radius: 8px;
           margin-bottom: 1rem;
-          border-left: 3px solid #606060;
+          border-left: 3px solid var(--theme-accent);
         }
         
         .project-details p {
-          color: #c0c0c0;
+          color: var(--theme-textPrimary);
           font-size: 0.9rem;
           margin: 0;
         }
@@ -194,57 +185,32 @@ const Projects = () => {
         }
         
         .tech-tag {
-          background: rgba(60, 60, 60, 0.6);
-          color: #e0e0e0;
+          background: rgba(var(--theme-accent), 0.2);
+          color: var(--theme-textPrimary);
           padding: 0.3rem 0.8rem;
           border-radius: 12px;
           font-size: 0.8rem;
           font-weight: 400;
-          border: 1px solid rgba(96, 96, 96, 0.3);
+          border: 1px solid var(--theme-border);
         }
         
         .use-case {
-          background: rgba(40, 40, 40, 0.3);
+          background: rgba(var(--theme-accent), 0.05);
           padding: 0.8rem;
           border-radius: 8px;
           margin-bottom: 1rem;
           font-size: 0.9rem;
-          color: #b0b0b0;
+          color: var(--theme-textSecondary);
         }
         
         .use-case strong {
-          color: #e0e0e0;
+          color: var(--theme-textPrimary);
         }
         
         .project-note {
-          color: #909090;
+          color: var(--theme-textMuted);
           font-size: 0.85rem;
           margin-bottom: 1rem;
-        }
-        
-        .project-actions {
-          display: flex;
-          gap: 1rem;
-        }
-        
-        .action-link {
-          display: flex;
-          align-items: center;
-          gap: 0.5rem;
-          color: #b0b0b0;
-          text-decoration: none;
-          font-size: 0.9rem;
-          font-weight: 500;
-          padding: 0.5rem 1rem;
-          border: 1px solid #404040;
-          border-radius: 8px;
-          transition: all 0.3s ease;
-        }
-        
-        .action-link:hover {
-          color: #ffffff;
-          border-color: #606060;
-          background: rgba(60, 60, 60, 0.2);
         }
         
         .card-glow {
