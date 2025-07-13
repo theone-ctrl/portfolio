@@ -1,7 +1,17 @@
-import React from 'react';
-import { Github, Linkedin, Mail, FileText } from 'lucide-react';
+import React, { useState } from 'react';
+import { Github, Linkedin, Mail, FileText, Eye, EyeOff } from 'lucide-react';
 
 const Hero = () => {
+  const [showBackground, setShowBackground] = useState(true);
+
+  const aiBackgrounds = [
+    "https://images.unsplash.com/photo-1697577418970-95d99b5a55cf?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzh8MHwxfHNlYXJjaHwxfHxhcnRpZmljaWFsJTIwaW50ZWxsaWdlbmNlfGVufDB8fHx8MTc1MjM5MjAyNXww&ixlib=rb-4.1.0&q=85",
+    "https://images.unsplash.com/photo-1674027444485-cec3da58eef4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzh8MHwxfHNlYXJjaHwyfHxhcnRpZmljaWFsJTIwaW50ZWxsaWdlbmNlfGVufDB8fHx8MTc1MjM5MjAyNXww&ixlib=rb-4.1.0&q=85",
+    "https://images.unsplash.com/photo-1644088379091-d574269d422f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzh8MHwxfHNlYXJjaHwzfHxuZXVyYWwlMjBuZXR3b3Jrc3xlbnwwfHx8fDE3NTIzOTIwMzR8MA&ixlib=rb-4.1.0&q=85"
+  ];
+
+  const [currentBackground] = useState(aiBackgrounds[2]); // Using the neural network visualization
+
   const socialLinks = [
     { icon: Linkedin, href: 'https://linkedin.com/in/nithyanandam-venu', label: 'LinkedIn' },
     { icon: Github, href: 'https://github.com/nithyanandam-venu', label: 'GitHub' },
@@ -13,8 +23,27 @@ const Hero = () => {
     window.location.href = 'mailto:nithya.ai.dev@gmail.com';
   };
 
+  const toggleBackground = () => {
+    setShowBackground(!showBackground);
+  };
+
   return (
     <section className="hero-section">
+      {showBackground && (
+        <div className="ai-background">
+          <img src={currentBackground} alt="AI Neural Network" />
+          <div className="background-overlay"></div>
+        </div>
+      )}
+      
+      <button 
+        className="background-toggle"
+        onClick={toggleBackground}
+        aria-label={showBackground ? "Hide background" : "Show background"}
+      >
+        {showBackground ? <EyeOff size={18} /> : <Eye size={18} />}
+      </button>
+
       <div className="hero-content">
         <div className="hero-text">
           <h1 className="hero-name">
@@ -23,6 +52,12 @@ const Hero = () => {
           <p className="hero-subtitle">
             AI Builder | LLM Specialist | Product Engineer
           </p>
+          <div className="ai-topics">
+            <span className="topic-tag">Fine-Tuning LLMs</span>
+            <span className="topic-tag">RAG Systems</span>
+            <span className="topic-tag">Neural Networks</span>
+            <span className="topic-tag">AI Automation</span>
+          </div>
           <button 
             className="connect-button"
             onClick={handleConnectClick}
@@ -57,12 +92,67 @@ const Hero = () => {
           justify-content: center;
           padding: 2rem;
           position: relative;
+          overflow: hidden;
+        }
+
+        .ai-background {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 0;
+        }
+
+        .ai-background img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          opacity: 0.15;
+          filter: blur(1px);
+        }
+
+        .background-overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: var(--theme-background);
+          opacity: 0.8;
+        }
+
+        .background-toggle {
+          position: absolute;
+          top: 2rem;
+          left: 2rem;
+          width: 45px;
+          height: 45px;
+          background: var(--theme-cardBg);
+          border: 1px solid var(--theme-border);
+          border-radius: 50%;
+          color: var(--theme-textSecondary);
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: all 0.3s ease;
+          backdrop-filter: blur(10px);
+          z-index: 10;
+        }
+
+        .background-toggle:hover {
+          color: var(--theme-textPrimary);
+          border-color: var(--theme-accent);
+          transform: scale(1.05);
         }
         
         .hero-content {
           text-align: center;
           max-width: 800px;
           animation: fadeInUp 1s ease-out;
+          position: relative;
+          z-index: 2;
         }
         
         .hero-name {
@@ -81,8 +171,54 @@ const Hero = () => {
           font-size: clamp(1.2rem, 3vw, 1.8rem);
           font-weight: 300;
           color: var(--theme-textSecondary);
-          margin-bottom: 3rem;
+          margin-bottom: 2rem;
           letter-spacing: 0.5px;
+        }
+
+        .ai-topics {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 1rem;
+          margin-bottom: 3rem;
+          max-width: 600px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .topic-tag {
+          background: rgba(var(--theme-accent), 0.2);
+          border: 1px solid var(--theme-accent);
+          color: var(--theme-textPrimary);
+          padding: 0.5rem 1rem;
+          border-radius: 20px;
+          font-size: 0.9rem;
+          font-weight: 500;
+          backdrop-filter: blur(10px);
+          transition: all 0.3s ease;
+          position: relative;
+          overflow: hidden;
+        }
+
+        .topic-tag:hover {
+          transform: translateY(-2px);
+          background: rgba(var(--theme-accent), 0.3);
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .topic-tag::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: -100%;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+          transition: left 0.5s ease;
+        }
+
+        .topic-tag:hover::before {
+          left: 100%;
         }
         
         .connect-button {
@@ -189,6 +325,23 @@ const Hero = () => {
         @media (max-width: 768px) {
           .hero-section {
             padding: 1rem;
+          }
+
+          .background-toggle {
+            top: 1rem;
+            left: 1rem;
+            width: 40px;
+            height: 40px;
+          }
+
+          .ai-topics {
+            gap: 0.8rem;
+            margin-bottom: 2rem;
+          }
+
+          .topic-tag {
+            font-size: 0.8rem;
+            padding: 0.4rem 0.8rem;
           }
           
           .social-links {
