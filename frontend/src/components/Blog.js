@@ -8,7 +8,7 @@ const Blog = () => {
       title: "Fine-tuning LLMs with LoRA: A Practical Guide",
       date: "2024-03-15",
       excerpt: "Exploring parameter-efficient fine-tuning techniques for large language models using Low-Rank Adaptation.",
-      url: "https://nithyaai.substack.com/p/fine-tuning-llms-with-lora"
+      url: "https://nithyanandamv.substack.com/p/fine-tuning-llms-with-lora"
     },
     {
       title: "Building RAG Systems That Actually Work",
