@@ -14,7 +14,7 @@ const Blog = () => {
       title: "Building RAG Systems That Actually Work",
       date: "2024-03-08",
       excerpt: "Common pitfalls in Retrieval-Augmented Generation and how to build production-ready RAG pipelines.",
-      url: "https://nithyaai.substack.com/p/building-rag-systems"
+      url: "https://nithyanandamv.substack.com/p/building-rag-systems"
     },
     {
       title: "The Future of AI-Powered Video Generation",
