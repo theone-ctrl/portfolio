@@ -38,7 +38,7 @@ const Blog = () => {
       <div className="container">
         <h2 className="section-title">Writings on AI</h2>
         <p className="section-subtitle">
-          Latest insights from <a href="https://nithyaai.substack.com" target="_blank" rel="noopener noreferrer" className="substack-link">nithyaai.substack.com</a>
+          Latest insights from <a href="https://nithyanandamv.substack.com" target="_blank" rel="noopener noreferrer" className="substack-link">nithyanandamv.substack.com</a>
         </p>
         
         <div className="blog-grid">
