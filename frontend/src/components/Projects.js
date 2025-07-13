@@ -44,9 +44,6 @@ const Projects = () => {
               <div className="card-content">
                 <div className="project-header">
                   <h3 className="project-title">{project.title}</h3>
-                  <div className="status-badge" style={{backgroundColor: project.statusColor}}>
-                    {project.status}
-                  </div>
                 </div>
                 
                 <p className="project-description">{project.description}</p>
@@ -74,13 +71,6 @@ const Projects = () => {
                     <em>{project.note}</em>
                   </div>
                 )}
-                
-                <div className="project-actions">
-                  <a href={project.link} className="action-link">
-                    <ExternalLink size={16} />
-                    View Project
-                  </a>
-                </div>
               </div>
               <div className="card-glow"></div>
             </div>
