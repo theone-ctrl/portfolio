@@ -154,7 +154,6 @@ const Projects = () => {
           font-weight: 600;
           color: #ffffff;
           line-height: 1.3;
-          flex: 1;
         }
         
         .status-badge {
