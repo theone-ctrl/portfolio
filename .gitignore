@@ -8,7 +8,6 @@ frontend/.pnp
 frontend/pnp.js
 frontend/.yarn/
 frontend/coverage/
-frontend/build/
 frontend/dist/
 frontend/.next/
 frontend/out/
