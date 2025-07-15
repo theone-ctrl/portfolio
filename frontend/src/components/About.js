@@ -9,7 +9,7 @@ const About = () => {
           <div className="divider"></div>
           <p className="about-text">
             10+ years in tech. I build LLM-powered tools, prompt workflows, and AI-first products.
-            <span className="highlight-text"> Transforming complex AI concepts into practical solutions</span> 
+            <span className="highlight-text"> Transforming complex AI concepts into practical solutions </span> 
             that real people can use and love.
           </p>
         </div>

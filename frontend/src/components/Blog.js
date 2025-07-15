@@ -8,19 +8,19 @@ const Blog = () => {
       title: "Fine-tuning LLMs with LoRA: A Practical Guide",
       date: "2024-03-15",
       excerpt: "Exploring parameter-efficient fine-tuning techniques for large language models using Low-Rank Adaptation.",
-      url: "https://nithyanandamv.substack.com/p/fine-tuning-llms-with-lora"
+      url: "https://nithyanandamv.substack.com/p/builder-series-4-fine-tuning-a-domain"
     },
     {
       title: "Building RAG Systems That Actually Work",
       date: "2024-03-08",
       excerpt: "Common pitfalls in Retrieval-Augmented Generation and how to build production-ready RAG pipelines.",
-      url: "https://nithyanandamv.substack.com/p/building-rag-systems"
+      url: "https://nithyanandamv.substack.com/p/builder-series-1-domain-specific"
     },
     {
       title: "The Future of AI-Powered Video Generation",
       date: "2024-02-28",
       excerpt: "From text-to-video models to lip-sync technology - exploring the cutting edge of AI video creation.",
-      url: "https://nithyanandamv.substack.com/p/ai-video-generation"
+      url: "https://nithyanandamv.substack.com/p/builder-series-2-building-a-talking"
     }
   ];
 

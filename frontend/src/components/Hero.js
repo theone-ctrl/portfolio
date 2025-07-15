@@ -1,40 +1,24 @@
 import React, { useState } from 'react';
-import { Github, Linkedin, Mail, FileText, Eye, EyeOff } from 'lucide-react';
+import { Github, Linkedin, Mail, FileText, } from 'lucide-react';
 
 const Hero = () => {
-  const [showBackground, setShowBackground] = useState(true);
+
 
   const socialLinks = [
     { icon: Linkedin, href: 'https://linkedin.com/in/nithyanandam-venu', label: 'LinkedIn' },
     { icon: Github, href: 'https://github.com/nithyanandam-venu', label: 'GitHub' },
     { icon: FileText, href: 'https://nithyanandamv.substack.com', label: 'Substack' },
-    { icon: Mail, href: 'mailto:nithya.ai.dev@gmail.com', label: 'Email' },
+    { icon: Mail, href: 'mailto:nithyanandamv@outlook.com', label: 'Email' },
   ];
 
   const handleConnectClick = () => {
-    window.location.href = 'mailto:nithya.ai.dev@gmail.com';
+    window.location.href = 'mailto:nithyanandamv@outlook.com';
   };
 
-  const toggleBackground = () => {
-    setShowBackground(!showBackground);
-  };
+
 
   return (
     <section className="hero-section">
-      {showBackground && (
-        <div className="ai-background">
-          <div className="background-overlay"></div>
-        </div>
-      )}
-      
-      <button 
-        className="background-toggle"
-        onClick={toggleBackground}
-        aria-label={showBackground ? "Hide background" : "Show background"}
-      >
-        {showBackground ? <EyeOff size={18} /> : <Eye size={18} />}
-      </button>
-
       <div className="hero-content">
         <div className="hero-text">
           <h1 className="hero-name">

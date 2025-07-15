@@ -3,7 +3,7 @@ import { Mail, Send } from 'lucide-react';
 
 const Contact = () => {
   const handleEmailClick = () => {
-    window.location.href = 'mailto:nithya.ai.dev@gmail.com?subject=Let\'s Work Together&body=Hi Nithyanandam,%0A%0AI would like to discuss a potential collaboration.%0A%0ABest regards,';
+    window.location.href = 'mailto:nithyanandamv@outlook.com?subject=Let\'s Work Together&body=Hi Nithyanandam,%0A%0AI would like to discuss a potential collaboration.%0A%0ABest regards,';
   };
 
   return (
@@ -27,7 +27,7 @@ const Contact = () => {
           </button>
           
           <div className="contact-info">
-            <p>nithya.ai.dev@gmail.com</p>
+            <p>nithyanandamv@outlook.com</p>
           </div>
         </div>
         

@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { MessageCircle, Bot, Sparkles, X } from 'lucide-react';
+import axios from 'axios';
 
 const ChatbotPlaceholder = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [input, setInput] = useState('');
+  const [hasAskedQuestion, setHasAskedQuestion] = useState(false);
   const [messages, setMessages] = useState([
     { type: 'bot', text: "Hi! I'm an AI assistant trained on Nithyanandam's work and experience. Ask me anything about his projects, skills, or background!" },
   ]);
@@ -10,22 +13,28 @@ const ChatbotPlaceholder = () => {
 
   const sampleQuestions = [
     "What are Nithyanandam's key AI projects?",
-    "Tell me about his experience with LLMs",
     "What's his background in RAG systems?",
-    "How can I collaborate with him?",
   ];
 
-  const handleSampleQuestion = (question) => {
+  const handleSampleQuestion = async (question) => {
     setMessages(prev => [...prev, { type: 'user', text: question }]);
     setIsTyping(true);
-    
-    setTimeout(() => {
+    setHasAskedQuestion(true);
+
+    try {
+      // const res = await axios.post('http://localhost:7860/ask', {
+      //   question,
+      // });
+      // const answer = res.data.answer;
       setIsTyping(false);
       setMessages(prev => [...prev, { 
-        type: 'bot', 
-        text: "This is a placeholder chatbot. Once integrated, I'll provide detailed insights about Nithyanandam's work, projects, and expertise. Stay tuned! 🚀" 
-      }]);
-    }, 2000);
+                          type: 'bot', 
+                          text: "The chatbot code is available in the repository but has not yet been deployed to the cloud. Once deployment is complete, you’ll be able to explore detailed insights about Nithyanandam’s work, projects, and expertise right here." 
+                        }]);
+    } catch (err) {
+      setIsTyping(false);
+      setMessages(prev => [...prev, { type: 'bot', text: "Sorry, something went wrong." }]);
+    }
   };
 
   const toggleChat = () => {
@@ -36,7 +45,7 @@ const ChatbotPlaceholder = () => {
     <>
       {/* Floating Chat Button */}
       <div className="chatbot-container">
-        <button 
+        <button
           className="chat-button"
           onClick={toggleChat}
           aria-label="Open AI Assistant"
@@ -47,7 +56,7 @@ const ChatbotPlaceholder = () => {
           </div>
           <span className="chat-tooltip">Ask me about Nithyanandam</span>
         </button>
-        
+
         {/* Chat Window */}
         {isOpen && (
           <div className="chat-window">
@@ -65,7 +74,7 @@ const ChatbotPlaceholder = () => {
                 <X size={18} />
               </button>
             </div>
-            
+
             <div className="chat-messages">
               {messages.map((message, index) => (
                 <div key={index} className={`message ${message.type}`}>
@@ -79,7 +88,7 @@ const ChatbotPlaceholder = () => {
                   </div>
                 </div>
               ))}
-              
+
               {isTyping && (
                 <div className="message bot">
                   <div className="message-avatar">
@@ -95,32 +104,81 @@ const ChatbotPlaceholder = () => {
                 </div>
               )}
             </div>
-            
-            <div className="sample-questions">
-              <p className="questions-header">Try asking:</p>
-              <div className="questions-grid">
-                {sampleQuestions.map((question, index) => (
-                  <button
-                    key={index}
-                    className="sample-question"
-                    onClick={() => handleSampleQuestion(question)}
-                  >
-                    {question}
-                  </button>
-                ))}
+
+           {!hasAskedQuestion && (
+              <div className="sample-questions">
+                <p className="questions-header">Try asking:</p>
+                <div className="questions-grid">
+                  {sampleQuestions.map((question, index) => (
+                    <button
+                      key={index}
+                      className="sample-question"
+                      onClick={() => {
+                        setHasAskedQuestion(true);
+                        handleSampleQuestion(question);
+                      }}
+                    >
+                      {question}
+                    </button>
+                  ))}
+                </div>
               </div>
-            </div>
-            
+            )}
+
+
             <div className="chat-input-area">
               <div className="coming-soon">
                 <MessageCircle size={16} />
-                <span>Full integration coming soon...</span>
+                <div className="chat-input-area">
+                  <form
+                    className="chat-form"
+                    onSubmit={async (e) => {
+                      e.preventDefault();
+                      if (!input.trim()) return;
+
+                      const userMessage = input.trim();
+                      setMessages(prev => [...prev, { type: 'user', text: userMessage }]);
+                      setInput('');
+                      setIsTyping(true);
+
+                      try {
+                        // const res = await axios.post('http://localhost:7860/ask', {
+                        //   question: userMessage,
+                        // });
+                        // const answer = res.data.answer;
+
+                        // setIsTyping(false);
+                        // setMessages(prev => [...prev, { type: 'bot', text: answer }]);
+                         setMessages(prev => [...prev, { 
+                              type: 'bot', 
+                              text: "The chatbot code is available in the repository but has not yet been deployed to the cloud. Once deployment is complete, you’ll be able to explore detailed insights about Nithyanandam’s work, projects, and expertise right here." 
+                            }]);
+                      } catch (err) {
+                        setIsTyping(false);
+                        setMessages(prev => [...prev, { type: 'bot', text: "Sorry, something went wrong." }]);
+                      }
+                    }}
+                  >
+                    <input
+                      type="text"
+                      className="chat-input"
+                      placeholder="Ask a question..."
+                      disabled={true}
+                      value={input}
+                      onChange={(e) => setInput(e.target.value)}
+                    />
+                    <button type="submit" className="send-button">
+                      Send
+                    </button>
+                  </form>
+                </div>
+
               </div>
             </div>
           </div>
         )}
       </div>
-      
+
       <style jsx>{`
         .chatbot-container {
           position: fixed;
@@ -191,7 +249,7 @@ const ChatbotPlaceholder = () => {
           bottom: 80px;
           right: 0;
           width: 350px;
-          height: 500px;
+          height: 650px;
           background: var(--theme-cardBg);
           border: 1px solid var(--theme-border);
           border-radius: 16px;
@@ -430,7 +488,7 @@ const ChatbotPlaceholder = () => {
           .chat-window {
             width: calc(100vw - 2rem);
             right: -1rem;
-            height: 450px;
+            height: 600px; /* increase here too */
           }
           
           .chat-button {
@@ -438,6 +496,36 @@ const ChatbotPlaceholder = () => {
             height: 55px;
           }
         }
+          .chat-form {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.chat-input {
+  flex: 1;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--theme-border);
+  font-size: 0.9rem;
+  background: var(--theme-bg);
+  color: var(--theme-textPrimary);
+}
+
+.send-button {
+  background: var(--theme-accent);
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.send-button:hover {
+  background: var(--theme-accentDark);
+}
+
       `}</style>
     </>
   );
