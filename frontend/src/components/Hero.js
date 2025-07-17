@@ -5,9 +5,9 @@ const Hero = () => {
 
 
   const socialLinks = [
-    { icon: Linkedin, href: 'https://linkedin.com/in/nithyanandam-venu', label: 'LinkedIn' },
-    { icon: Github, href: 'https://github.com/nithyanandam-venu', label: 'GitHub' },
-    { icon: FileText, href: 'https://nithyanandamv.substack.com', label: 'Substack' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/in/nithyanandamv', label: 'LinkedIn' },
+    { icon: Github, href: 'https://github.com/theone-ctrl', label: 'GitHub' },
+    { icon: FileText, href: 'https://nithyanandamv.substack.com/', label: 'Substack' },
     { icon: Mail, href: 'mailto:nithyanandamv@outlook.com', label: 'Email' },
   ];
 
